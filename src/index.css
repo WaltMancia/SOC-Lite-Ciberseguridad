@@ -1,0 +1,111 @@
+@import "@fontsource-variable/inter";
+@import "@fontsource-variable/jetbrains-mono";
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Primitive palette → semantic tokens → component usage */
+    --background: 216 33% 97%;
+    --foreground: 231 26% 10%;
+    --card: 0 0% 100%;
+    --card-foreground: 231 26% 10%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 231 26% 10%;
+    --primary: 214 100% 39%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 214 25% 95%;
+    --secondary-foreground: 231 26% 10%;
+    --muted: 214 25% 95%;
+    --muted-foreground: 215 16% 42%;
+    --accent: 214 100% 96%;
+    --accent-foreground: 214 100% 35%;
+    --destructive: 0 72% 45%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 214 25% 89%;
+    --input: 214 25% 89%;
+    --ring: 214 100% 39%;
+    --radius: 0.625rem;
+    --sidebar-background: 231 26% 10%;
+    --sidebar-foreground: 214 20% 90%;
+    --sidebar-primary: 214 100% 45%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 230 18% 18%;
+    --sidebar-accent-foreground: 0 0% 100%;
+    --sidebar-border: 230 16% 20%;
+    --sidebar-ring: 214 100% 55%;
+  }
+
+  * {
+    @apply border-border;
+  }
+
+  html {
+    font-family: "Inter Variable", sans-serif;
+    background: #f6f8fb;
+    color: #12141f;
+    font-synthesis: none;
+    text-rendering: optimizeLegibility;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    min-width: 320px;
+    min-height: 100dvh;
+    margin: 0;
+    font-size: 16px;
+    line-height: 1.5;
+  }
+
+  button,
+  a,
+  input,
+  [role="button"] {
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  button:not(:disabled),
+  [role="button"]:not([aria-disabled="true"]) {
+    cursor: pointer;
+  }
+
+  ::selection {
+    background: #cce1ff;
+    color: #12141f;
+  }
+}
+
+@layer utilities {
+  .font-mono {
+    font-family: "JetBrains Mono Variable", monospace;
+  }
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  border: 2px solid transparent;
+  border-radius: 999px;
+  background: #cbd5e1;
+  background-clip: padding-box;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
